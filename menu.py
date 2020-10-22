@@ -1,14 +1,14 @@
+from car import Cars
 class Menu():
-    def __init__(self):
-        pass
+    pass
     def main_menu(self):
         menu = '''********** Main Menu ************\n Option         Description\n 1.             Purchase Car             
     2.              Exit      \n\n Enter option:  \n''' 
         option = int(input(menu))
         if option == 1:
-            buy_car_menu()
+            self.buy_car_menu()
         else:
-            leave_game()
+            self.leave_game()
 
     #options menu
     def options_menu(self):
@@ -16,18 +16,18 @@ class Menu():
     2.          Buy Decals     \n 3.          Race          \n 4.          Sell Car\n 5.          Main Menu\n\n Enter choice:  '''
         choice = (int(input(options)))
         if choice == 1:
-            buy_mods()
+            self.buy_mods()
         elif choice == 2:
-            buy_decals()
+            self.buy_decals()
         elif choice == 3:
-            race()
+            self.race()
         elif choice == 4:
-            sell_car()
+            self.sell_car()
         elif choice == 5:
-            main_menu()
+            self.main_menu()
         else:
             print("Option not valid")
-            options_menu()
+            self.options_menu()
 
     #player chooses car to purchase
     def buy_car_menu(self):
@@ -35,7 +35,19 @@ class Menu():
     2.        Toyota Corolla      $1,500\n 3.         Ford Mustang       $3,000\n 4.         Lambo Diablo       $5,000\n 5.        Bugatti Chiron      $10,000
     \n\n Enter choice to purchase:  '''
         car_choice = int(input(car_menu))
-        my_car = cars[car_choice - 1]
+        if car_choice == 1:
+            my_car = cars["PT Cruiser"]
+        elif car_choice == 2:
+            my_car = cars["Toyota Corolla"]
+        elif car_choice == 3:
+            my_car = cars["Ford Mustang"]
+        elif car_choice == 4:
+            my_car = cars["Lambo Diablo"]
+        elif car_choice == 5:
+            my_car = cars["Bugatti Chiron"]
+        else: 
+            print("Not a valid choice")
+        
         return my_car
 
     #allows player to modify his car by purchasing mods
@@ -55,6 +67,20 @@ class Menu():
         opponent_menu = '''**** WHO DO YOU WANT TO RACE?!?! ****\n Option         Car            \n 1.         PT Cruiser         
     2.        Toyota Corolla      \n 3.         Ford Mustang       \n 4.         Lambo Diablo       \n 5.        Bugatti Chiron     
     \n\n Enter choice:  '''
-        opponent = int(input(opponent_menu))
+        choice = int(input(opponent_menu))
+        if choice == 1:
+            opponent = cars["PT Cruiser"]
+        elif choice == 2:
+            opponent = cars["Toyota Corolla"]
+        elif choice == 3:
+            opponent = cars["Ford Mustang"]
+        elif choice == 4:
+            opponent = cars["Lambo Diablo"]
+        elif choice == 5:
+            opponent = cars["Bugatti Chiron"]
+        else: 
+            print("Not a valid choice")    
         return opponent
 
+
+menu = Menu()

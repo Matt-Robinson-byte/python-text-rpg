@@ -1,18 +1,21 @@
 from car import Car
 from player import Player
-from menu import Menu
+from menu import menu
 import time
 
-name = (input("Enter your Name: "))
-player = Player(name, 1000)
 
-cars = {
-    "PT Cruiser"     : Car(80,6),
-    "Toyota Corolla" : Car(100,8),
-    "Ford Mustang"   : Car(125,6),
-    "Lambo Diablo"   : Car(130,7),
-    "Bugatti Chiron" : Car(135,8)
-}
+cars = [
+    Car("PT Cruiser",80,6),
+    Car("Toyota Corolla",100,8),
+    Car("Ford Mustang",125,6),
+    Car("Lambo Diablo",130,7),
+    Car("Bugatti Chiron",135,8)
+]
+#Menu.main_menu()
+# name = (input("Enter your Name: "))
+# player = Player(name, 1000)
+
+
 
 #======Races your car against an opponent of your choice
 def race():
@@ -35,6 +38,7 @@ def race():
     while i < seconds:
         for car_name in all_cars:
             opponent.move
+            my_car.move()
         i += 1
     print("*********Race is over!!!***********")
     if my_car.postion > opponent.position:
@@ -42,7 +46,7 @@ def race():
     else:
         print(f"\n       :(:(:(You Won $${winnings}:(:(:(")
 
-Menu.main_menu(self)
+menu.main_menu()
 #options_menu()
 #print(buy_car_menu())
 #buy_mods()
