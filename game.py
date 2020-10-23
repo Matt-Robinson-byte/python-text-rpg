@@ -4,16 +4,11 @@ from menu import menu
 import time
 
 
-cars = [
-    Car("PT Cruiser",80,6),
-    Car("Toyota Corolla",100,8),
-    Car("Ford Mustang",125,6),
-    Car("Lambo Diablo",130,7),
-    Car("Bugatti Chiron",135,8)
-]
+
 #Menu.main_menu()
 # name = (input("Enter your Name: "))
-# player = Player(name, 1000)
+# player = Player(name)
+# print(f"\nWelcome to RACING WORLD {player.name}!! You have ${player.bank_account} in your account!\n")
 
 
 
@@ -21,6 +16,7 @@ cars = [
 def race():
     race_menu()                  #=====opponent menu
     seconds= int(input("Enter race duration in seconds: "))
+    winnings = int(input("Enter amount to bet:"))
     print("*********Your Opponent is Starting his Engine!!!!***********")
     time.sleep(0.5)
     clock = "fiv"
@@ -43,8 +39,10 @@ def race():
     print("*********Race is over!!!***********")
     if my_car.postion > opponent.position:
         print(f"\n       !!!!!!You Won $${winnings}!!!!!!")
+        Player.wins(self, winnings)
     else:
         print(f"\n       :(:(:(You Won $${winnings}:(:(:(")
+        Player.loses(self,winnings)
 
 menu.main_menu()
 #options_menu()

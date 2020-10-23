@@ -1,5 +1,7 @@
+from player import Player
 class Car():
-    def __init__(self, top_speed , acceleration,tires = False,speed = 0,position = 0,nos = False,decals = "",blower = False,wear = 50):
+    def __init__(self,name, top_speed , acceleration, price, tires = False,speed = 0,position = 0,nos = False,decals = "",blower = False,wear = 50):
+        self.name = name
         self.tires = tires
         self.speed = 0
         self.top_speed = top_speed
@@ -9,31 +11,38 @@ class Car():
         self.decals = 0
         self.blower = blower
         self.wear = 50
-        
-    def blower(self):
-        if self.blower == False:
-            self.blower = True
-        else:
-            self.blower = False
-        
-
-    def nos(self):
-        if self.nos == False:
-            self.nos = True
-        else:
-            self.nos = False
-
-    def tires(self):
-        if self.tires == False:
-            self.tires = True
-        else:
-            self.tires = False
+        self.price = price
     
-    def repair(self):
-        if wear < 50:
-            wear = 50
+    def accelerate(self):
+        self.speed += self.acceleration
+        if self.speed > self.top_speed:
+            self.speed = self.top_speed
+
+    def move(self):
+        self.accelerate()
+        self.position += self.speed
+
+    def blower_mod(self):
+        self.blower = True
+        self.top_speed += 10
+        self.acceleration += 1
+        
+
+    def nos_mod(self):
+        self.top_speed += 20
+        self.acceleration += 3
+
+    def tires_mod(self):
+        self.top_speed += 5
+        self.acceleration += 2
+    
+    def repair_mod(self):
+        if self.wear < 50:
+            self.wear = 50
 
     def wear_tear(self):
-        self.wear -= 1
+        self.wear -= 5
     
+    def has_decals(self):
+        self.top_speed += 2
     

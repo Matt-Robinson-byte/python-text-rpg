@@ -9,11 +9,9 @@ class Player():
     
     def wins(self, winnings):
         self.bank_account = self.bank_account + winnings
+    
+    def loses(self, winnings):
+        self.bank_account = self.bank_account - winnings
 
-    def __str__(self):
-        inv = ""
-        for ivt in self.bank_account:
-            inv += " "+ ivt.name
-        return """
-            Bank Account Balance: %s
-        """ % (self.bank_account)
+    def sell_car(self, car_price):
+        self.bank_account += car_price
