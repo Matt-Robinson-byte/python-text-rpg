@@ -1,4 +1,4 @@
-from player import Player
+#from player import Player
 class Car():
     def __init__(self,name, top_speed , acceleration, price, tires = False,speed = 0,position = 0,nos = False,decals = "",blower = False,wear = 50):
         self.name = name
@@ -26,7 +26,10 @@ class Car():
         self.blower = True
         self.top_speed += 10
         self.acceleration += 1
-        
+    
+    def reset(self):
+        self.position = 0
+        self.speed = 0
 
     def nos_mod(self):
         self.top_speed += 20
@@ -39,6 +42,7 @@ class Car():
     def repair_mod(self):
         if self.wear < 50:
             self.wear = 50
+    
 
     def wear_tear(self):
         self.wear -= 5

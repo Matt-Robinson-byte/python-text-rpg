@@ -1,4 +1,6 @@
 
+
+
 class Player():
     def __init__(self, name, bank_account=1000):
         self.name = name
@@ -13,5 +15,7 @@ class Player():
     def loses(self, winnings):
         self.bank_account = self.bank_account - winnings
 
-    def sell_car(self, car_price):
-        self.bank_account += car_price
+    def sell_car(self, price):
+        self.bank_account += price
+       
+            
