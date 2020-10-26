@@ -9,7 +9,6 @@ import os
 def clear():
     call('clear' if os.name == 'posix' else 'cls')
 
-
 #Menu.main_menu()
 # name = (input("Enter your Name: "))
 # player = Player(name)

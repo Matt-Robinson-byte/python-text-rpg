@@ -14,7 +14,7 @@ car = [
     Car("Toyota Corolla",100,8, 1500),
     Car("Ford Mustang",125,6, 3000),
     Car("Lambo Diablo",130,7, 5000),
-    Car("Bugatti Chiron",135,8, 10000)
+    Car("Bugatti Chicharron",135,8, 10000)
 ]
 name = (input("Enter your Name: "))
 player = Player(name)
@@ -78,8 +78,8 @@ class Menu():
     def buy_car_menu(self):
         global my_car
         clear()
-        car_menu = f'''********** Car Options ************     Account Balance: {player.bank_account}\n Option         Car            Price\n 1.         PT Cruiser         $500
- 2.        Toyota Corolla      $1,500\n 3.         Ford Mustang       $3,000\n 4.         Lambo Diablo       $5,000\n 5.        Bugatti Chiron      $10,000\n 6.        Options menu      
+        car_menu = f'''********** Car Options ************     Account Balance: {player.bank_account}\n Option         Car            Price\n 1.         PT Bruiser         $500
+ 2.        Toyota Corona      $1,500\n 3.         Ford Mustard       $3,000\n 4.         Lambo Diabolo       $5,000\n 5.     Bugatti Chicharron     $10,000\n 6.        Options menu      
     \n\n Enter choice:  '''
         car_choice = int(input(car_menu))
         print("\n")
